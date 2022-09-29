@@ -1,25 +1,25 @@
+import { purple } from "@mui/material/colors";
+import { fontFamily } from "@mui/system";
 import React from "react";
-import AssignmentIcon from '@mui/icons-material/Assignment';
-
+import NavbarIcon from "../images/assignment.png"
 export const Navbar = () => {
   return (
     <>
-       <nav style={{ backgroundColor: "peach" }} className="navbar navbar-dark">
+       <nav style={{ backgroundColor: "black" }} className="navbar navbar-dark">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-            {/* <img
+            <img
               src={NavbarIcon}
               alt=""
-              width="30"
-              height="24"
+              width="60"
+              height="44"
               className="d-inline-block align-text-top"
-            /> */}
-            <AssignmentIcon/>
-            Taskify
+            />
+           <h3><span style={{color:"white",fontFamily:"cursive"}}>vizierE-task</span> </h3>
           </a>
           <form className="d-flex">
             <button
-              style={{ backgroundColor: "black", color: "white" }}
+              style={{ backgroundColor: "purple", color: "white" }}
               className="btn"
               type="button"
             >
