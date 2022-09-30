@@ -61,7 +61,8 @@ export default function Dashboard() {
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        sx={{ borderRight: 1, borderColor: 'divider' }}
+        sx={{ borderRight: 1, borderColor: 'divider', background:"pink", color:"white"}}
+        
       >
        <Tab label="MY PROFILE" {...a11yProps(0)} />
         <Tab label="FEED" {...a11yProps(1)} />

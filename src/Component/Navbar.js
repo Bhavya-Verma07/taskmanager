@@ -15,13 +15,14 @@ export const Navbar = () => {
               height="44"
               className="d-inline-block align-text-top"
             />
-           <h3><span style={{color:"white",fontFamily:"cursive"}}>vizierE-task</span> </h3>
+           <h3 className=""><span style={{color:"white",fontFamily:"cursive"}}>vizierE-task</span> </h3>
           </a>
           <form className="d-flex">
             <button
               style={{ backgroundColor: "purple", color: "white" }}
               className="btn"
               type="button"
+    
             >
               Login/Signup
             </button>
