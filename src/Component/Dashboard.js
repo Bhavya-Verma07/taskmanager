@@ -52,16 +52,17 @@ export default function Dashboard() {
   };
 
   return (
-    <Box
-      sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 224 }}
+    <Box className="boxcontents mx-auto"
+      style={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 224, marginTop:"70px"}}
     >
       <Tabs
+     className="Tabfixing mx-auto"
         orientation="vertical"
         variant="scrollable"
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        sx={{ borderRight: 1, borderColor: 'divider', background:"pink", color:"white"}}
+        sx={{ borderRight: 1, borderColor: 'divider', background:"pink", color:"white", overflow:"visible"}}
         
       >
        <Tab label="MY PROFILE" {...a11yProps(0)} />

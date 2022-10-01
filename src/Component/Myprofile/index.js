@@ -1,8 +1,9 @@
 import React from 'react'
+import UserProfile from '../UserProfile';
 
 export const Myprofile = () => {
   return (
-    <div>hello from Myprofile</div>
+    <div><UserProfile/> </div>
   )
 }
 

@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
      <Navbar/>
-     <Dashboard/>
+     <div style={{margintop:"0px"}}><Dashboard/></div>
     </div>
   );
 }
