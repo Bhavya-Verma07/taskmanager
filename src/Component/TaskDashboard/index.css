@@ -39,11 +39,9 @@ border-radius: 3px;
 padding: 5px;
 }
 
-#buttonstyle{
-text-align: right;
-margin: auto;
-}
+
 .taskname{
    padding: 3px;
    background-color: white;
 }
+
