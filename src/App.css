@@ -103,14 +103,20 @@
   color: #fff;
   flex: column;
 }
+/* for navbar */
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
 }
+/* for box */
+/* .boxcontents{
+  margin-left: 0%;
+} */
 
-.Box{
+.Tabfixing{
+ 
   position: fixed;
-  top:0%;
-  width: max-content;
+  height: 250px
 }
+

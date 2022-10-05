@@ -1,12 +1,26 @@
-import React from "react";
+import React,{useState} from "react";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import CommentIcon from "@mui/icons-material/Comment";
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+import BookmarkIcon from "@mui/icons-material/Bookmark";
+// import { Autocomplete } from "@mui/material";
+
 
 export const Post = () => {
+const [liked, setLiked]= useState(false);
+const [saved, setSaved]= useState(false);
+
   return (
     <>
-      <div className="py-40 bg-gray-300">
-        <div className="h-screen px-2">
-          <div className="max-w-md mx-auto bg-white shadow-lg rounded-md overflow-hidden md:max-w-md">
-            <div className="md:flex">
+
+
+
+
+      <div className="py-40 bg-gray-300 my-3">
+        <div className="h-screen px-2 text-center"  style={{marginLeft:"300px"}}>
+          <div className="max-w-md mx-auto bg-white shadow-lg rounded-md overflow-hidden md:max-w-md ">
+            <div className="md:flex" >
               <div className="w-full">
                 <div className="flex justify-between items-center p-3">
                   <div className="flex flex-row items-center">
@@ -42,18 +56,25 @@ export const Post = () => {
                     className="w-full h-75"
                   />
                 </div>
-
-                <div className="p-4 flex justify-between items-center">
-                  <div className="flex flex-row items-center">
-                    <i className="fa fa-heart-o mr-2 fa-1x hover:text-gray-600"></i>
-                    <i className="fa fa-comment-o mr-2 fa-1x hover:text-gray-600"></i>
-                    <i className="fa fa-send-o mr-2 fa-1x hover:text-gray-600"></i>
+                <div className="row mt-2" style={{height:"40px"}}>
+                  <div className="col-4" style={{float:"right", curser: "pointer"}}
+                  onClick={()=> setLiked(!liked)}>
+                   {liked? <FavoriteIcon fontSize="large" />: <FavoriteBorderIcon fontSize="large"/>}
+                   
                   </div>
-
-                  <div>
-                    <i className="fa fa-bookmark-o fa-1x hover:text-gray-600"></i>
+                  <div className="col-4"
+                   onClick={()=> alert("commented!")}
+                   style={{curser: "pointer"}}>
+                    <CommentIcon fontSize="large"/>
+                  </div>
+                  <div className="col-4"
+                  style={{curser: "pointer"}}
+                  onClick={()=> setSaved(!saved)}>
+                    {saved?<BookmarkIcon fontSize="large"/>:<BookmarkBorderIcon fontSize="large" />
+                    }
                   </div>
                 </div>
+              
               </div>
             </div>
           </div>

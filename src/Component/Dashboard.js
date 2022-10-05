@@ -1,15 +1,16 @@
-import * as React from 'react';
-import TaskDashboard from './TaskDashboard';
-import Myprofile from './Myprofile';
-import SavedPosts from './SavedPosts';
-import MyFeed from './MyFeed';
-import Feed from './Feed';
-import TaskManagement from './TaskManagement';
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import * as React from "react";
+import TaskDashboard from "./TaskDashboard";
+import Myprofile from "./Myprofile";
+import SavedPosts from "./SavedPosts";
+import MyFeed from "./MyFeed";
+import Feed from "./Feed";
+import TaskManagement from "./TaskManagement";
+import PropTypes from "prop-types";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+// import { width } from "@mui/system";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -23,7 +24,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ px: 30 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -40,7 +41,7 @@ TabPanel.propTypes = {
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
+    "aria-controls": `vertical-tabpanel-${index}`,
   };
 }
 
@@ -52,44 +53,55 @@ export default function Dashboard() {
   };
 
   return (
-    <Box className="boxcontents mx-auto"
-      style={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 224, marginTop:"70px"}}
+    <Box
+      className="boxcontents"
+      style={{
+        flexGrow: 1,
+        bgcolor: "background.paper",
+        display: "flex",
+        height: 224,
+        marginTop: "72px",
+      }}
     >
       <Tabs
-     className="Tabfixing mx-auto"
+        className="Tabfixing"
         orientation="vertical"
         variant="scrollable"
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        sx={{ borderRight: 1, borderColor: 'divider', background:"pink", color:"white", overflow:"visible"}}
-        
+        sx={{
+          borderRight: 1,
+          borderColor: "divider",
+          background: "pink",
+          color: "white",
+          overflow: "visible",
+        }}
       >
-       <Tab label="MY PROFILE" {...a11yProps(0)} />
+        <Tab label="MY PROFILE" {...a11yProps(0)} />
         <Tab label="FEED" {...a11yProps(1)} />
         <Tab label="MY FEED" {...a11yProps(2)} />
         <Tab label="SAVED POSTS" {...a11yProps(3)} />
         <Tab label="TASK DASHBOARD" {...a11yProps(4)} />
         <Tab label="TASK MANAGEMENT" {...a11yProps(5)} />
-       
       </Tabs>
       <TabPanel value={value} index={0}>
-   <Myprofile/>
+        <Myprofile />
       </TabPanel>
       <TabPanel value={value} index={1}>
-       <Feed/>
+        <Feed />
       </TabPanel>
       <TabPanel value={value} index={2}>
-       <MyFeed/>
+        <MyFeed />
       </TabPanel>
       <TabPanel value={value} index={3}>
-       <SavedPosts/>
+        <SavedPosts />
       </TabPanel>
       <TabPanel value={value} index={4}>
-        <TaskDashboard/>
+        <TaskDashboard />
       </TabPanel>
       <TabPanel value={value} index={5}>
-       <TaskManagement/>
+        <TaskManagement />
       </TabPanel>
     </Box>
   );
