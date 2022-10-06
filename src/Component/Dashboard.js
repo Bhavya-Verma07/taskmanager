@@ -4,7 +4,7 @@ import Myprofile from "./Myprofile";
 import SavedPosts from "./SavedPosts";
 import MyFeed from "./MyFeed";
 import Feed from "./Feed";
-import TaskManagement from "./TaskManagement";
+import  { TaskManager } from "./TaskManagement";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -101,7 +101,7 @@ export default function Dashboard() {
         <TaskDashboard />
       </TabPanel>
       <TabPanel value={value} index={5}>
-        <TaskManagement />
+        <TaskManager/>
       </TabPanel>
     </Box>
   );
