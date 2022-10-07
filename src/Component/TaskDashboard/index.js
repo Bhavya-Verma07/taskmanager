@@ -1,47 +1,43 @@
 import React from "react";
 import "./index.css";
+import { PieChart, Pie,Cell, Legend, Tooltip } from "recharts";
 
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid } from "recharts";
 
-const data = [
-  { name: "Group A", value: 400 },
-  { name: "Group B", value: 300 },
-  { name: "Group C", value: 300 },
-  { name: "Group D", value: 200 },
+const data01 = [
+  { name: "Assigned ", value: 7 },
+  { name: "In progress", value: 5 },
+  { name: "Completed", value: 5 },
 ];
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
-const RADIAN = Math.PI / 180;
-const renderCustomizedLabel = ({
-  cx,
-  cy,
-  midAngle,
-  innerRadius,
-  outerRadius,
-  percent,
-  index,
-}) => {
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-  const x = cx + radius * Math.cos(-midAngle * RADIAN);
-  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+const COLORS = ["salmon","rgb(247, 215, 70)","rgb(141, 203, 90)"];
 
-  return (
-    <text
-      x={x}
-      y={y}
-      fill="white"
-      textAnchor={x > cx ? "start" : "end"}
-      dominantBaseline="central"
-    >
-      {`${(percent * 100).toFixed(0)}%`}
-    </text>
-  );
-};
+const data = [
+  {
+    name: "Assigned",
+    Html: 40,
+    CSS: 44,
+    JS: 24,
+  },
+  {
+    name: "In Progress",
+    Html: 30,
+    CSS: 13,
+    JS: 22,
+  },
+  {
+    name: "Completed",
+    Html: 20,
+    CSS: 31,
+    JS: 22,
+  }
+];
 
 const TaskDashboard = () => {
   return (
     <>
       <div className="dashboardClass">
+      <div className="container">
         <div className="headings">Your Task's Dashboard</div>
         <div className="row">
           <div className="col-6">
@@ -60,30 +56,65 @@ const TaskDashboard = () => {
           </div>
         </div>
       </div>
+      </div>
+      <div className="container" style={{marginTop:"4px"}}>
       <div className="headings">Tasks Distribution</div>
       <div className="row">
-      <div className="col-6">
-      {/* <ResponsiveContainer width="100%" height="100%"> */}
-        <PieChart width={400} height={400}>
-          <Pie
+        <div className="col-6">
+          <PieChart width={400} height={400}>
+            <Pie
+              dataKey="value"
+              isAnimationActive={false}
+              data={data01}
+              cx="50%"
+              cy="50%"
+              outerRadius={80}
+              fill="#8884d8"
+              label
+            >
+              {" "}
+              {data.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
+              ))}
+            </Pie>
+
+            <Tooltip />
+            <Legend />
+          </PieChart>
+          {/* </ResponsiveContainer> */}
+        </div>
+        <div className="col-6">
+          {/* <ResponsiveContainer width="100%" height="100%"> */}
+          <LineChart
+            width={500}
+            height={300}
             data={data}
-            cx="50%"
-            cy="50%"
-            labelLine={false}
-            label={renderCustomizedLabel}
-            outerRadius={80}
-            fill="#8884d8"
-            dataKey="value"
+            margin={{
+              top: 70,
+              right: 50,
+              left: 20,
+              bottom: 2,
+            }}
           >
-            {data.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]}
-              />
-            ))}
-          </Pie>
-        </PieChart>
-      {/* </ResponsiveContainer> */}
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line
+              type="monotone"
+              dataKey="CSS"
+              stroke="rgb(141, 203, 90)"
+              activeDot={{ r: 8 }}
+            />
+            <Line type="monotone" dataKey="Html" stroke="rgb(247, 215, 70)" />
+            <Line type="monotone" dataKey="JS" stroke="salmon" />
+          </LineChart>
+          {/* </ResponsiveContainer> */}
+        </div>
       </div>
       </div>
     </>

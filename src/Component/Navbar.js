@@ -8,7 +8,7 @@ export const Navbar = () => {
     <>
       <div className="sticky mx-auto">
         <nav
-          style={{ backgroundColor: "black"}}
+          style={{  backgroundImage: "linear-gradient(to right, black , #770737, black)"}}
           className="navbar navbar-dark mx-auto"
         >
           <div className="container-fluid">
