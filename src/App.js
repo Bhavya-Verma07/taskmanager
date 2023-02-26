@@ -1,14 +1,11 @@
+import "./App.css";
 
-import './App.css';
-import Dashboard from './Component/Dashboard';
-import Navbar from './Component/Navbar';
-
+import TaskManager from "./Component/TaskManagement";
 
 function App() {
   return (
     <div className="App">
-     <div my-0px><Navbar/></div>
-    <Dashboard/>
+      <TaskManager />
     </div>
   );
 }

@@ -3,8 +3,8 @@
     border-radius: 10px 10px 10px 10px;
     border-style: solid;
     border-color: whitesmoke;
-    background-color: salmon;
-    height: 1000px;
+    background-color: rgb(247, 215, 70);
+    height: 100vh;
 }
 #ManagerDiv2{
     border-width: 4px;
@@ -12,15 +12,15 @@
     border-style: solid;
     border-color: whitesmoke;
     background-color: rgb(247, 215, 70);
-    height: 1000px;
+    height: 100vh;
 }
 #ManagerDiv3{
     border-width: 4px;
     border-radius: 10px 10px 10px 10px;
     border-style: solid;
     border-color: whitesmoke;
-    background-color: rgb(141, 203, 90);
-    height: 1000px;
+    background-color:  rgb(247, 215, 70);
+    height: 100vh;
 }
 .headings{
     margin-top: 4px;
